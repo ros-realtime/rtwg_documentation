@@ -1,5 +1,9 @@
 # rtwg_documentation
 
+## On-line documentation link
+
+https://real-time-working-group.readthedocs.io/en/latest/
+
 ## Build instructions
 
 ```bash
