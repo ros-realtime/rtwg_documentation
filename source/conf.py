@@ -114,7 +114,7 @@ html_static_path = ['_static']
 htmlhelp_basename = 'Real-timeworkinggroupdoc'
 
 html_static_path = ['_static']
-html_logo="rtwg_image.png"
+html_logo="images/rtwg_image.png"
 html_theme_options = {
     'logo_only': False,
     'display_version': False,
