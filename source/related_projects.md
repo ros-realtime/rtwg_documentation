@@ -1,7 +1,6 @@
-Related Projects
-*********************
+# Related Projects
 
-Performance measurements
+## Performance measurements
 
 - performance_test
   - Description: Tool to test the performance of pub/sub based communication frameworks
@@ -24,7 +23,7 @@ Performance measurements
   - Repositories
     - https://github.com/hsgwa/ros2_timer_latency_measurement
 
-Real-time utilities
+## Real-time utilities
 
 - realtime_support
   - Description: Minimal real-time testing utility for measuring jitter and latency
@@ -54,7 +53,7 @@ Real-time utilities
   - Repositories:
     - https://github.com/ros-controls/realtime_tools/tree/foxy-devel
 
-Real-time demos
+## Real-time demos
 
 - pendulum_control
   - Description: Real-time inverted pendulum control demo

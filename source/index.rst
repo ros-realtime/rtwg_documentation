@@ -12,8 +12,8 @@ The Real-Time Working Group's mission is to advocate for and work on memory mana
    :maxdepth: 2
    :caption: Contents:
 
+   build_rt_kernel
+   test_environment
    subprojects
    related_projects
-   test_environment
-   build_rt_kernel
    how_to_contribute
