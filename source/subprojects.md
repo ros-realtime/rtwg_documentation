@@ -1,8 +1,4 @@
-Subproject List
-***************
-
-This Working Group owns and maintains the following Subprojects.
-Its meetings and membership are largely focused on the direction, design, and work on the projects.
+# Subproject List
 
 The following subprojects are owned by Real-Time Working Group:
 
