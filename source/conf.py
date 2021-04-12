@@ -51,6 +51,7 @@ extensions = [
     "sphinx_rtd_theme",
     "recommonmark",
     "sphinx_markdown_tables",
+    "sphinx_multiversion",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
