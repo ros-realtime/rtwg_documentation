@@ -9,11 +9,11 @@ Welcome to Real-Time working group's documentation!
 The Real-Time Working Group's mission is to advocate for and work on memory management, real-time pub/sub, real-time DDS, and tools that allow tracing, profiling and optimizing.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
-   subprojects
-   related_projects
-   test_environment
-   build_rt_kernel
-   how_to_contribute
+   Guides/index
+   Real-Time-Buildfarm/index
+   Subprojects/subprojects
+   Related-Projects/related_projects
+   Contributing/how_to_contribute
