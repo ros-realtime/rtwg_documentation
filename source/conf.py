@@ -50,6 +50,8 @@ extensions = [
     'sphinx.ext.githubpages',
     "sphinx_rtd_theme",
     "recommonmark",
+    "sphinx_markdown_tables",
+    "sphinx_multiversion",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -114,7 +116,7 @@ html_static_path = ['_static']
 htmlhelp_basename = 'Real-timeworkinggroupdoc'
 
 html_static_path = ['_static']
-html_logo="rtwg_image.png"
+html_logo="images/rtwg_image.png"
 html_theme_options = {
     'logo_only': False,
     'display_version': False,

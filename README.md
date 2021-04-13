@@ -1,5 +1,11 @@
 # rtwg_documentation
 
+[![Documentation Status](https://readthedocs.org/projects/real-time-working-group/badge/?version=latest)](https://real-time-working-group.readthedocs.io/en/latest/?badge=latest)
+
+## On-line documentation link
+
+https://real-time-working-group.readthedocs.io/en/latest/
+
 ## Build instructions
 
 ```bash
