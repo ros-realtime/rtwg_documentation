@@ -2,7 +2,16 @@
 
 ## Introduction
 
-Ubuntu 20.04 x86_64 docker container is used to cross-compile a new kernel. There is a Dockerfile which can be used for that purpose. If you want to build it using gitpod you need to run https://gitpod.io/#https://github.com/ros-realtime/rt-kernel-docker-builder. It will spawn a docker container automatically for you.
+This document explains how to build a real-time kernel using a docker container provided by the ROS Real-Time Working Group. The docker container comes with cross-compilation tools installed, and a ready-to-build RT kernel. This should be the prefered option for those users who simply want to use to cross-compile a new kernel.
+
+## Limitations
+
+For the moment, the tool supports the following options:
+- XXX kernel version and 
+- crosscompilation for aarch64
+- pre-configured kernel settings
+
+In the future, more additional settings will be supported. 
 
 ## Build and run docker container
 
@@ -15,15 +24,7 @@ $ docker build -t rtwg-image .
 $ docker run -t -i rtwg-image bash
 ```
 
-## Setup a build environment
-
-Container comes with cross-compilation tools installed, and a ready-to-build RT kernel:
-* ARMv8 cross-compilation tools
-* Linux source build dependencies
-* Linux source buildinfo, i.e. from where config is copied
-* Ubuntu RPI4 linux source installed under ~/linux_build
-* RT kernel patch downloaded and applied - the nearest to the recent RPI4 Ubuntu kernel
-
+Alternatively, if you want to build it using gitpod you need to run https://gitpod.io/#https://github.com/ros-realtime/rt-kernel-docker-builder. It will spawn a docker container automatically for you.
 
 ## Kernel configuration
 

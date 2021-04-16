@@ -5,7 +5,7 @@
    :maxdepth: 2
    :caption: Contents:
    
-   Real-Time-Linux/build_rt_kernel
+   Real-Time-Linux/rt_linux_index
    VxWorks/build_vxworks
    QNX/build_qnx
 ```
