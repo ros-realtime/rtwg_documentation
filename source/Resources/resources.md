@@ -48,4 +48,6 @@ This document contains a compilation of ROS and real-time related documents, art
 - [Towards a distributed and real-time framework for robots: Evaluation of ROS 2.0 communications for real-time robotic applications](https://arxiv.org/pdf/1809.02595.pdf)
 - [Response-Time Analysis of ROS 2 Processing Chains under Reservation-Based Scheduling](https://t-blass.de/papers/response-time-analysis-of-ros2.pdf)
 - [Latency Overhead of ROS2 for Modular Time-Critical Systems](https://arxiv.org/pdf/2101.02074.pdf)
-
+- [Exploring Real-Time Executor on ROS 2](https://ieeexplore.ieee.org/document/9301530)
+- [Distributed and Synchronized Setup towards Real-Time Robotic Control using ROS2 on Linux](https://ieeexplore.ieee.org/document/9217010)
+- [The rclc Executor: Domain-specific deterministic scheduling mechanisms for ROS applications on microcontrollers: work-in-progress](https://ieeexplore.ieee.org/document/9244014)
