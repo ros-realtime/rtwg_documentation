@@ -18,4 +18,5 @@ The Real-Time Working Group's mission is to advocate for and work on memory mana
    Subprojects/subprojects
    Related-Projects/related_projects
    Resources/resources
+   Contact/contact
    Contributing/how_to_contribute
