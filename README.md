@@ -3,7 +3,7 @@
 [![Documentation Status](https://readthedocs.org/projects/real-time-working-group/badge/?version=latest)](https://real-time-working-group.readthedocs.io/en/latest/?badge=latest)
 
 This repository contains the sources for the ROS 2 real-time working group documentation that is hosted at https://real-time-working-group.readthedocs.io.
-The sources from this repository are built and uploaded to the site manually.
+The sources from this repository are automatically fetched and built on every commit.
 
 ## Contributing to the documentation
 
