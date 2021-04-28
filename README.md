@@ -1,6 +1,6 @@
 # ROS 2 Real-Time Working Group Documentation
 
-[![Documentation Status](https://readthedocs.org/projects/real-time-working-group/badge/?version=latest)](https://real-time-working-group.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/real-time-working-group/badge/?version=rolling)](https://real-time-working-group.readthedocs.io/en/rolling/?badge=rolling)
 
 This repository contains the sources for the ROS 2 real-time working group documentation that is hosted at https://real-time-working-group.readthedocs.io.
 The sources from this repository are automatically fetched and built on every commit.
@@ -39,4 +39,3 @@ This is the recommended way to test out local changes.
 ## Contributing to ROS 2 real-time working group
 
 To contribute to the project please refer to the [How to Contribute](https://real-time-working-group.readthedocs.io/en/latest/Contributing/how_to_contribute.html).
-
