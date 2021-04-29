@@ -4,14 +4,12 @@
 
 This document explains how to build a real-time kernel using a docker container provided by the ROS Real-Time Working Group. The docker container comes with cross-compilation tools installed, and a ready-to-build RT kernel. This should be the prefered option for those users who simply want to use to cross-compile a new kernel.
 
-## Limitations
+## Supported configuration
 
 For the moment, the tool supports the following options:
-- XXX kernel version and 
+- 5.4.0 kernel version and 5.4.86-rt48 patch
 - crosscompilation for aarch64
 - pre-configured kernel settings
-
-In the future, more additional settings will be supported. 
 
 ## Build and run docker container
 
