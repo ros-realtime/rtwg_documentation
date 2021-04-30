@@ -20,6 +20,9 @@ matrix:
       # Ignore text between inline back ticks
       - open: '(?P<open>`+)'
         close: '(?P=open)'
+      # Ignore local links between ]()
+      - open: '(?P<open>\]\()'
+        close: '(.*\))$'
   sources:
   - '**/*.md'
   default_encoding: utf-8
