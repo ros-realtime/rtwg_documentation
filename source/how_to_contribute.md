@@ -54,6 +54,6 @@ of the PR.
 
 PR will be merged on unanimous approval from Approvers.
 
-If the repositories of the subproject are under the WG’s GitHub
+If the repositories of the subproject are under the WG's GitHub
 organization, they will be transferred out of the organization or
 deleted at this time.

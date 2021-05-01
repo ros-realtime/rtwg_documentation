@@ -1,6 +1,6 @@
 # Resources
 
-This document contains a compilation of ROS and real-time related documents, articles, dicussions.
+This document contains a compilation of ROS and real-time related documents, articles, and discussions.
 
 
 ## ROS 2 design 
@@ -12,7 +12,7 @@ This document contains a compilation of ROS and real-time related documents, art
 ## Tutorials / Guides
 
 - [Real-time programming in ROS 2](https://docs.ros.org/en/rolling/Tutorials/Real-Time-Programming.html)
-- [Building realtime Linux for ROS 2](https://docs.ros.org/en/rolling/Tutorials/Building-Realtime-rt_preempt-kernel-for-ROS-2.html)
+- [Building real-time Linux for ROS 2](https://docs.ros.org/en/rolling/Tutorials/Building-Realtime-rt_preempt-kernel-for-ROS-2.html)
 
 
 ## ROSCon
@@ -50,4 +50,4 @@ This document contains a compilation of ROS and real-time related documents, art
 - [Latency Overhead of ROS2 for Modular Time-Critical Systems](https://arxiv.org/pdf/2101.02074.pdf)
 - [Exploring Real-Time Executor on ROS 2](https://ieeexplore.ieee.org/document/9301530)
 - [Distributed and Synchronized Setup towards Real-Time Robotic Control using ROS2 on Linux](https://ieeexplore.ieee.org/document/9217010)
-- [The rclc Executor: Domain-specific deterministic scheduling mechanisms for ROS applications on microcontrollers: work-in-progress](https://ieeexplore.ieee.org/document/9244014)
+- [The ```rclc``` Executor: Domain-specific deterministic scheduling mechanisms for ROS applications on microcontrollers: work-in-progress](https://ieeexplore.ieee.org/document/9244014)
