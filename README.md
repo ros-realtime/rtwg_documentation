@@ -26,15 +26,28 @@ The root directory contains configuration and files required to locally build th
 ### Building the site
 
 To build the site for just this branch, type the following commands at the top-level of the repository.
+
 ```bash
 cd ~
 git clone https://github.com/ros-realtime/rtwg_documentation
 cd rtwg_documentation
 docker build -t rtwg_documentation .
-docker run -v "$(pwd)":/docs -it rtwg_documentation
+docker run -v "$(pwd)":/docs -u $(id -u):$(id -g) -it rtwg_documentation
 ```
+
 Build results are located at `~/rtwg_documentation/build/index.html`.
 This is the recommended way to test out local changes.
+
+### Runnining the site
+
+To run the site locally, type the following commands at the top-level of the repository.
+
+```bash
+cd build
+python3 -m http.server --bind <your machine IP>
+```
+
+It will be accessible remotely at http://<your machine IP>:8000/index.html
 
 ## Contributing to ROS 2 real-time working group
 
