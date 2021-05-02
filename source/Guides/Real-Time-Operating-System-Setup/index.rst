@@ -7,5 +7,5 @@ Real Time Operating System Setup
    :caption: Contents:
    
    Real-Time-Linux/index
-   VXworks/index
+   VxWorks/index
    QNX/index
