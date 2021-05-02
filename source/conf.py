@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Real-Time working group'
-copyright = '2021, Lander Usategui'
-author = 'Lander Usategui'
+project = 'ROS 2 Real-Time Working Group'
+copyright = '2021, ROS 2 Real-Time Working Group'
+author = 'ROS 2 Real-Time Working Group'
 
 # The short X.Y version
 version = '0.1'
