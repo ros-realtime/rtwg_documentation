@@ -47,7 +47,7 @@ cd build
 python3 -m http.server --bind 127.0.0.1
 ```
 
-It will be accessible remotely at http://127.0.0.1:8000
+It will be accessible remotely at http://<remote_ip_address>:8000
 
 ## Contributing to ROS 2 real-time working group
 
