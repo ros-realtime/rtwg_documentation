@@ -44,10 +44,10 @@ To run the site locally, type the following commands at the top-level of the rep
 
 ```bash
 cd build
-python3 -m http.server --bind <your machine IP>
+python3 -m http.server --bind 127.0.0.1
 ```
 
-It will be accessible remotely at http://<your machine IP>:8000/index.html
+It will be accessible remotely at http://<remote_ip_address>:8000
 
 ## Contributing to ROS 2 real-time working group
 
