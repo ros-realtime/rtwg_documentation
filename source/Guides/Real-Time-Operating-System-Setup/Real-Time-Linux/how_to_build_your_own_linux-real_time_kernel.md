@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this document, several guides are listed for users who want to build their own real-time kernel. That is, users who want to build a specific kernel version, a specific architecture or use a cutomized kernel configuration. 
+In this document, several guides are listed for users who want to build their own real-time kernel. That is, users who want to build a specific kernel version, a specific architecture or use a customized kernel configuration. 
 
 ## External guides
 
