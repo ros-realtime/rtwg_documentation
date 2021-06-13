@@ -6,7 +6,7 @@ In this document, several guides are listed for users who want to build their ow
 
 ## External guides
 
-- HOWTO setup Linux with PREEMPT_RT properly
+- How to setup Linux with PREEMPT_RT properly
    - Description: Official instructions from the Linux Foundation
    - [https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/preemptrt_setup](https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/preemptrt_setup)
 - Building real-time Linux for ROS 2
