@@ -8,7 +8,7 @@ This document explains how to build a real-time kernel using a docker container 
 
 For the moment, the tool supports the following options:
 - 5.4.0 kernel version and 5.4.86-rt48 patch
-- crosscompilation for aarch64
+- cross-compilation for aarch64
 - pre-configured kernel settings
 
 ## Build and run docker container
