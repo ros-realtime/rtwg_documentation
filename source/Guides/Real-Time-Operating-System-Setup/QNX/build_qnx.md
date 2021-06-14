@@ -1,3 +1,3 @@
-# Build QNX (WIP)
+# Build QNX 
 
-The QNX instructions are currently work in progress. You can find a temporary guide here: https://github.com/asobhy-qnx/ros2_documentation/blob/master/source/Installation/Rolling/QNX-Development-Setup.rst
+You can find the ROS 2 official QNX build instructions here: [https://ros2-qnx-documentation.readthedocs.io/en/latest/](https://ros2-qnx-documentation.readthedocs.io/en/latest/)
