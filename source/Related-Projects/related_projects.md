@@ -57,7 +57,8 @@
   - Repositories:
     - [https://github.com/ros2/rclc](https://github.com/ros2/rclc)
     - [Jan Staschulat, Ralph Lange, Dakshina Narahari Dasari. Budget-based real-time Executor for Micro-ROS. CoRR arXiv:2105.05590, May 2021](https://arxiv.org/abs/2105.05590)
-    - [Ofera Project: Open Framework for Embedded Robot Applications](http://www.ofera.eu/index.php)
+    - [Jan Staschulat, Ingo Lütkebohle, Ralph Lange: The rclc Executor: Domain-specific deterministic scheduling mechanisms for ROS applications on microcontrollers, EMSOFT 2020.](https://ieeexplore.ieee.org/document/9244014)
+    - [micro-ROS puts ROS 2 onto microcontrollers](https://micro.ros.org/)
 
 ## Real-time demos
 
