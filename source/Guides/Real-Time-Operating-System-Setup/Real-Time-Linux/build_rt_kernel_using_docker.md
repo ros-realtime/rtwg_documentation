@@ -22,8 +22,6 @@ $ docker build -t rtwg-image .
 $ docker run -t -i rtwg-image bash
 ```
 
-Alternatively, if you want to build it using gitpod you need to run https://gitpod.io/#https://github.com/ros-realtime/rt-kernel-docker-builder. It will spawn a docker container automatically for you.
-
 ## Kernel configuration
 
 Additionally RT kernel configured as
