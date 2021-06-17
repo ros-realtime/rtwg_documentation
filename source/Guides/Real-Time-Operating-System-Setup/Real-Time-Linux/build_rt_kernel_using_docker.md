@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This document explains how to build a real-time kernel using a docker container provided by the ROS Real-Time Working Group. The docker container comes with cross-compilation tools installed, and a ready-to-build RT kernel. This should be the prefered option for those users who simply want to use to cross-compile a new kernel.
+This document explains how to build a real-time kernel using a docker container provided by the ROS Real-Time Working Group. The docker container comes with cross-compilation tools installed, and a ready-to-build RT kernel. This should be the preferred option for those users who simply want to use to cross-compile a new kernel.
 
 ## Supported configuration
 
 For the moment, the tool supports the following options:
 - 5.4.0 kernel version and 5.4.86-rt48 patch
-- crosscompilation for aarch64
+- cross-compilation for aarch64
 - pre-configured kernel settings
 - Raspberry Pi 4 Model B Rev 1.2 (more platforms will be added in the future)
 
@@ -168,7 +168,7 @@ $ sudo reboot
 ### Configure boot options
 
 
-Inside the Raspberry PI, add the following line at the end in `/boot/firmware/cmdline.txt`:
+Inside the Raspberry PI, add the following at the end of the line in `/boot/firmware/cmdline.txt`:
 
 
 ```bash
@@ -178,7 +178,7 @@ $ sudo vim /boot/firmware/cmdline.txt
 
 Here is an explanation of what each option will do:
 
-- `dwc_otg.fiq_fsm_enable=0 dwc_otg.fiq_enable=0 dwc_otg.nak_holdoff=0`: solves an issue causing a high CPU usage from the USB driver (see https://www.osadl.org/Single-View.111+M5c03315dc57.0.html)
+- `dwc_otg.fiq_fsm_enable=0 dwc_otg.fiq_enable=0 dwc_otg.nak_holdoff=0`: solves an issue causing a high CPU usage from the USB driver (see [https://www.osadl.org/Single-View.111+M5c03315dc57.0.html](https://www.osadl.org/Single-View.111+M5c03315dc57.0.html))
 - `rcu_nocbs=0`: relocates RCU callbacks to kernel threads 
 - `nohz_full=1-3`: makes CPU1, CPU2 and CPU3 tickless  
 - `isolcpus=1-3`: isolates CPU1, CPU2 and CPU3. No process will be automatically scheduled to these CPUs.
@@ -189,7 +189,7 @@ Here is an explanation of what each option will do:
 TODO: explain all the boot options used
 
 For more information see:
-- https://linux.enea.com/4.0/documentation/book-enea-linux-realtime-guide.pdf
+- [https://linux.enea.com/4.0/documentation/book-enea-linux-realtime-guide.pdf](https://linux.enea.com/4.0/documentation/book-enea-linux-realtime-guide.pdf)
 
 ### Verify that eveything is correctly configured
 

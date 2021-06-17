@@ -1,6 +1,6 @@
 # Real-Time Linux
 
-These are guides to build and configure the Linux kernel using PREEMPT_RT. Depen
+These are guides to build and configure the Linux kernel using PREEMPT_RT.
 
 ```eval_rst
 .. toctree::
