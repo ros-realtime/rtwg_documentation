@@ -264,9 +264,32 @@ ubuntu@ubuntu:~$ cat /proc/softirqs
 Check that all the CPU cores are operating at 1000MHz:
 
 ```bash
-ubuntu@ubuntu:~$ cpufreq-info | grep "cpufreq stats"
-  cpufreq stats: 600 MHz:0.00%, 700 MHz:0.00%, 800 MHz:0.00%, 900 MHz:0.00%, 1000 MHz:100.00%, 1.10 GHz:0.00%, 1.20 GHz:0.00%, 1.30 GHz:0.00%, 1.40 GHz:0.00%, 1.50 GHz:0.00%
-  cpufreq stats: 600 MHz:0.00%, 700 MHz:0.00%, 800 MHz:0.00%, 900 MHz:0.00%, 1000 MHz:100.00%, 1.10 GHz:0.00%, 1.20 GHz:0.00%, 1.30 GHz:0.00%, 1.40 GHz:0.00%, 1.50 GHz:0.00%
-  cpufreq stats: 600 MHz:0.00%, 700 MHz:0.00%, 800 MHz:0.00%, 900 MHz:0.00%, 1000 MHz:100.00%, 1.10 GHz:0.00%, 1.20 GHz:0.00%, 1.30 GHz:0.00%, 1.40 GHz:0.00%, 1.50 GHz:0.00%
-  cpufreq stats: 600 MHz:0.00%, 700 MHz:0.00%, 800 MHz:0.00%, 900 MHz:0.00%, 1000 MHz:100.00%, 1.10 GHz:0.00%, 1.20 GHz:0.00%, 1.30 GHz:0.00%, 1.40 GHz:0.00%, 1.50 GHz:0.00%
+# reset cpufreq stat counters
+ubuntu@ubuntu:~$ echo '1' | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/stats/reset
+1
+ubuntu@ubuntu:~$ cpufreq-info -s -m
+600 MHz:0.00%, 700 MHz:0.00%, 800 MHz:0.00%, 900 MHz:0.00%, 1000 MHz:100.00%, 1.10 GHz:0.00%, 1.20 GHz:0.00%, 1.30 GHz:0.00%, 1.40 GHz:0.00%, 1.50 GHz:0.00%
 ```
+
+### Benchmark
+
+Finally, we can benchmark the real-time performance of the configured kernel with the platform we are using. A common benchmark is to measure the interrupt latency using a tool named [cyclictest](https://wiki.linuxfoundation.org/realtime/documentation/howto/tools/cyclictest/start). 
+
+For example you run a latency test imposing CPU and I/O stress in the system and verifying that the latency test results in good performance.
+
+```bash
+$ taskset -c 0 stress -c 1 & 
+$ taskset -c 1 stress -c 1 &
+$ taskset -c 2 stress -c 1 &
+$ taskset -c 3 stress -c 1 &
+$ taskset -c 0 stress -i 1 &
+$ taskset -c 1 stress -i 1 &
+$ taskset -c 2 stress -i 1 &
+$ taskset -c 3 stress -i 1 &
+$ taskset -c 0 cyclictest -p 90 -m -t1 -n -D 3h -i 200 -a 1 -h500 -q 
+```
+
+In order to generate a latency plot you can use the [OSADL script](https://www.osadl.org/Create-a-latency-plot-from-cyclictest-hi.bash-script-for-latency-plot.0.html).
+
+
+![](./images/rpi4_latency_plot.png)
