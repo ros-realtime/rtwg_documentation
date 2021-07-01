@@ -50,4 +50,6 @@ This document contains a compilation of ROS and real-time related documents, art
 - [Latency Overhead of ROS2 for Modular Time-Critical Systems](https://arxiv.org/pdf/2101.02074.pdf)
 - [Exploring Real-Time Executor on ROS 2](https://ieeexplore.ieee.org/document/9301530)
 - [Distributed and Synchronized Setup towards Real-Time Robotic Control using ROS2 on Linux](https://ieeexplore.ieee.org/document/9217010)
-- [The ```rclc``` Executor: Domain-specific deterministic scheduling mechanisms for ROS applications on microcontrollers: work-in-progress](https://ieeexplore.ieee.org/document/9244014)
+- [Jan Staschulat, Ingo Lütkebohle, Ralph Lange. The rclc Executor: Domain-specific deterministic scheduling mechanisms for ROS applications on microcontrollers, EMSOFT 2020.](https://ieeexplore.ieee.org/document/9244014)
+- [Jan Staschulat, Ralph Lange, Dakshina Narahari Dasari. Budget-based real-time Executor for Micro-ROS. CoRR arXiv:2105.05590, May 2021](https://arxiv.org/abs/2105.05590)
+- [L. Puck et al. Distributed and Synchronized Setup towards Real-Time Robotic Control using ROS2 on Linux](https://ieeexplore.ieee.org/document/9217010)
