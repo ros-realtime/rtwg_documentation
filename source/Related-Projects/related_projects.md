@@ -13,7 +13,7 @@
 - ```buildfarm_perf_tests```
   - Description: Performance tests which run regularly on the ROS 2 buildfarm
   - Repositories
-    - [https://github.com/ros2/buildfarm_perf_tests](https://github.com/ros2/buildfarm_perf_tests)   
+    - [https://github.com/ros2/buildfarm_perf_tests](https://github.com/ros2/buildfarm_perf_tests)
 - ```TwoWaysMeasurement```
   - Description: Tool to test the real-time performance in a ping-pong scenario
   - Repositories
@@ -52,6 +52,15 @@
   - Description: Contains a set of tools that can be used from a hard real-time thread, without breaking the real-time behavior
   - Repositories:
     - [https://github.com/ros-controls/realtime_tools/tree/foxy-devel](https://github.com/ros-controls/realtime_tools/tree/foxy-devel)
+- ```rclc```
+  - Description: ROS Client Library for the C language
+  - Repositories:
+    - [https://github.com/ros2/rclc](https://github.com/ros2/rclc)
+- ```micro-ROS```
+  - Description: ROS 2 based framework targeting embedded and deeply embedded robot components with extremely constrained computational resources
+  - Repositories:
+    - [https://micro.ros.org/](https://micro.ros.org/)
+    - [https://github.com/micro-ROS](https://github.com/micro-ROS)
 
 ## Real-time demos
 
