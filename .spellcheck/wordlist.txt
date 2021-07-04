@@ -15,6 +15,7 @@ gitpod
 Iceoryx
 Ingo
 iRobot
+JanStaschulat
 jitter
 linter
 LTS
