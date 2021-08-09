@@ -73,7 +73,6 @@ html_theme = 'sphinx_rtd_theme'
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Real-timeworkinggroupdoc'
 
-html_static_path = ['_static']
 html_logo="images/rtwg_image.png"
 html_theme_options = {
     'logo_only': False,
