@@ -97,12 +97,12 @@ $ source install/setup.bash
 ```
 
 Then run the `performance_test` experiment.
-We simply create an experiment with a node publishing ~1 MB messages to another node as fast as possible for 60 seconds using the highest real-time priority.
+We simply create an experiment with a node publishing ~1 MB messages to another node as fast as possible for 60 seconds using the second highest real-time priority so that we don't interfere with critical kernel threads.
 We need to run `performance_test` as root to be able to use real-time priorities.
 
 ```sh
 $ # terminal 2
-$ sudo ./install/performance_test/lib/performance_test/perf_test -c rclcpp-single-threaded-executor -p 1 -s 1 -r 0 -m Array1m --reliable --max-runtime 60 --use-rt-prio 99
+$ sudo ./install/performance_test/lib/performance_test/perf_test -c rclcpp-single-threaded-executor -p 1 -s 1 -r 0 -m Array1m --reliable --max-runtime 60 --use-rt-prio 98
 ```
 
 If that last command doesn't work for you (with an error like: "error while loading shared libraries"), run the slightly-different command below.
@@ -110,7 +110,7 @@ This is because, for security reasons, we need to manually pass `*PATH` environm
 
 ```sh
 $ # terminal 2
-$ sudo env PATH="$PATH" LD_LIBRARY_PATH="$LD_LIBRARY_PATH" ./install/performance_test/lib/performance_test/perf_test -c rclcpp-single-threaded-executor -p 1 -s 1 -r 0 -m Array1m --reliable --max-runtime 60 --use-rt-prio 99
+$ sudo env PATH="$PATH" LD_LIBRARY_PATH="$LD_LIBRARY_PATH" ./install/performance_test/lib/performance_test/perf_test -c rclcpp-single-threaded-executor -p 1 -s 1 -r 0 -m Array1m --reliable --max-runtime 60 --use-rt-prio 98
 ```
 
 ```eval_rst
