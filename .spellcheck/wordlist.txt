@@ -9,6 +9,7 @@ CoRR
 Dakshina
 Dasari
 Dockerfile
+durations
 EMSOFT
 et
 gitpod
@@ -18,8 +19,10 @@ iRobot
 JanStaschulat
 jitter
 linter
+linux
 LTS
 Lütkebohle
+md
 microcontroller
 microcontrollers
 Middleware
