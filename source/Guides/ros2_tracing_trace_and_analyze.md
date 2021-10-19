@@ -89,13 +89,13 @@ $ ros2 trace --session-name perf-test --kernel --list
 ```
 
 In a second terminal, source the workspace and run the `performance_test` experiment.
-We simply create an experiment with a node publishing ~1 MB messages to another node as fast as possible for 60 seconds.
+We simply create an experiment with a node publishing ~1 MB messages to another node as fast as possible for 60 seconds using the highest real-time priority.
 
 ```sh
 $ # terminal 2
 $ cd ~/tracing_ws
 $ source install/setup.bash
-$ ./install/performance_test/lib/performance_test/perf_test -c rclcpp-single-threaded-executor -p 1 -s 1 -r 0 -m Array1m --reliable --max-runtime 60
+$ ./install/performance_test/lib/performance_test/perf_test -c rclcpp-single-threaded-executor -p 1 -s 1 -r 0 -m Array1m --reliable --max-runtime 60 --use-rt-prio 99
 ```
 
 Once the experiment is done, in the first terminal, press enter again to stop tracing.
