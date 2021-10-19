@@ -113,6 +113,9 @@ Use `babeltrace` to quickly look at the resulting trace.
 $ babeltrace ~/.ros/tracing/perf-test
 ```
 
+The output of the above command is a human-readable version of the raw Common Trace Format (CTF) data, which is a list of trace events.
+Each event has a timestamp, an event type, some information on the process that generated the event, and the values of the fields of the given event type.
+
 Next, we will analyze the trace.
 
 ## Analysis
