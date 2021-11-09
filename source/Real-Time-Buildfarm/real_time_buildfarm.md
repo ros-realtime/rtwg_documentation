@@ -37,5 +37,5 @@ We use ROS2 Foxy release and Ubuntu 20.04 which is a Tier 1 platform as describe
 
 ### Latest Stable PREEMPT_RT Kernel
 
-* PREEMPT_RT Kernel is built using [these instructions](https://github.com/ros-realtime/rt-kernel-docker-builder)
+* PREEMPT_RT Kernel is built using [these instructions](https://github.com/ros-realtime/linux-real-time-kernel-builder)
 
