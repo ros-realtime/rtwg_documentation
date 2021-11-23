@@ -17,8 +17,8 @@ For the moment, the tool supports the following options:
 For the local build:
 
 ```bash
-$ git clone https://github.com/ros-realtime/rt-kernel-docker-builder
-$ cd rt-kernel-docker-builder
+$ git clone https://github.com/ros-realtime/linux-real-time-kernel-builder
+$ cd linux-real-time-kernel-builder
 $ docker build -t rtwg-image .
 $ docker run -t -i rtwg-image bash
 ```
