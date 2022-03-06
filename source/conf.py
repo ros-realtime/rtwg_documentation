@@ -7,6 +7,7 @@
 import sys
 import os
 import shlex
+import time
 
 import recommonmark
 from recommonmark.transform import AutoStructify
@@ -14,8 +15,8 @@ from recommonmark.transform import AutoStructify
 # -- Project information -----------------------------------------------------
 
 project = 'ROS 2 Real-Time Working Group'
-copyright = '2021, ROS 2 Real-Time Working Group'
 author = 'ROS 2 Real-Time Working Group'
+copyright = f"{time.strftime('%Y')}, {author}"
 
 # The short X.Y version
 version = '0.1'
