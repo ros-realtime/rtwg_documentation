@@ -39,6 +39,7 @@ extensions = [
     "sphinx_rtd_theme",
     "sphinx_markdown_tables",
     "sphinx_multiversion",
+    "recommonmark",
     "sphinx.ext.githubpages",
 ]
 
