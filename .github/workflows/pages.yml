@@ -2,7 +2,7 @@ name: Pages
 on:
   push:
     branches:
-    - rolling
+    - sphinx-to-gh-pages
 jobs:
   build:
     runs-on: ubuntu-20.04
