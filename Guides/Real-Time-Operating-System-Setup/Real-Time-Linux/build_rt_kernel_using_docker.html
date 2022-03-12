@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build a Linux Real-Time kernel using docker &mdash; ROS 2 Real-Time Working Group  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Real-time Raspberry PI images" href="real_time_raspberry_pi_images.html" />
+    <link rel="prev" title="How to build your own Linux real-time kernel" href="how_to_build_your_own_linux-real_time_kernel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> ROS 2 Real-Time Working Group
+            <img src="../../../_static/rtwg_image.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../guides.html">Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../rtos_setup.html">Real Time Operating System Setup</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="rt_linux_index.html">Real-Time Linux</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="how_to_build_your_own_linux-real_time_kernel.html">How to build your own Linux real-time kernel</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Build a Linux Real-Time kernel using docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="real_time_raspberry_pi_images.html">Real-time Raspberry PI images</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../VxWorks/build_vxworks.html">Build VxWorks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../QNX/build_qnx.html">Build QNX</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Configure-RMW-Implementation/configure_rmw.html">How to configure a RMW implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../How-to-configure-ROS2-rt-application/how-to-configure-a-ROS2-real-time-application.html">How to configure a ROS2 real-time application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ros2_tracing_trace_and_analyze.html">How to use ros2_tracing to trace and analyze an application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Real-Time-Buildfarm/real_time_buildfarm.html">Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Subprojects/subprojects.html">Subproject List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Related-Projects/related_projects.html">Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Resources/resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Contact/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Contributing/how_to_contribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Roadmap/Roadmap.html">Roadmap</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ROS 2 Real-Time Working Group</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../guides.html">Guides</a> &raquo;</li>
+          <li><a href="../rtos_setup.html">Real Time Operating System Setup</a> &raquo;</li>
+          <li><a href="rt_linux_index.html">Real-Time Linux</a> &raquo;</li>
+      <li>Build a Linux Real-Time kernel using docker</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/Guides/Real-Time-Operating-System-Setup/Real-Time-Linux/build_rt_kernel_using_docker.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="build-a-linux-real-time-kernel-using-docker">
+<h1>Build a Linux Real-Time kernel using docker<a class="headerlink" href="#build-a-linux-real-time-kernel-using-docker" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>This document explains how to build a real-time kernel using a docker container provided by the ROS Real-Time Working Group. The docker container comes with cross-compilation tools installed, and a ready-to-build RT kernel. This should be the preferred option for those users who simply want to use to cross-compile a new kernel.</p>
+</section>
+<section id="supported-configuration">
+<h2>Supported configuration<a class="headerlink" href="#supported-configuration" title="Permalink to this headline"></a></h2>
+<p>For the moment, the tool supports the following options:</p>
+<ul class="simple">
+<li><p>5.4.0 kernel version and 5.4.86-rt48 patch</p></li>
+<li><p>cross-compilation for aarch64</p></li>
+<li><p>pre-configured kernel settings</p></li>
+<li><p>Raspberry Pi 4 Model B Rev 1.2 (more platforms will be added in the future)</p></li>
+</ul>
+</section>
+<section id="build-and-run-docker-container">
+<h2>Build and run docker container<a class="headerlink" href="#build-and-run-docker-container" title="Permalink to this headline"></a></h2>
+<p>For the local build:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ros-realtime/linux-real-time-kernel-builder
+$ <span class="nb">cd</span> linux-real-time-kernel-builder
+$ docker build -t rtwg-image .
+$ docker run -t -i rtwg-image bash
+</pre></div>
+</div>
+</section>
+<section id="kernel-configuration">
+<h2>Kernel configuration<a class="headerlink" href="#kernel-configuration" title="Permalink to this headline"></a></h2>
+<p>By default the kernel is configured with the following options:</p>
+<ul class="simple">
+<li><p>RT preempt real-time kernel</p></li>
+<li><p>Fixed operation frequency at 1.0 GHz</p></li>
+<li><p>CPU1, CPU2 and CPU3 tickless</p></li>
+<li><p>No CPU frequency scaling</p></li>
+</ul>
+<p>This is configured automatically by setting the following options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./scripts/config -d CONFIG_PREEMPT <span class="se">\</span>
+$ ./scripts/config -e CONFIG_PREEMPT_RT <span class="se">\</span>
+$ ./scripts/config -d CONFIG_NO_HZ_IDLE <span class="se">\</span>
+$ ./scripts/config -e CONFIG_NO_HZ_FULL <span class="se">\</span>
+$ ./scripts/config -d CONFIG_HZ_250 <span class="se">\</span>
+$ ./scripts/config -e CONFIG_HZ_1000 <span class="se">\</span>
+$ ./scripts/config -d CONFIG_AUFS_FS <span class="se">\</span>
+</pre></div>
+</div>
+<p>which corresponds to the following</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable CONFIG_PREEMPT_RT</span>
+ -&gt; General Setup
+  -&gt; Preemption Model <span class="o">(</span>Fully Preemptible Kernel <span class="o">(</span>Real-Time<span class="o">))</span>
+   <span class="o">(</span>X<span class="o">)</span> Fully Preemptible Kernel <span class="o">(</span>Real-Time<span class="o">)</span>
+
+<span class="c1"># Enable CONFIG_HIGH_RES_TIMERS</span>
+ -&gt; General setup
+  -&gt; Timers subsystem
+   <span class="o">[</span>*<span class="o">]</span> High Resolution Timer Support
+
+<span class="c1"># Enable CONFIG_NO_HZ_FULL</span>
+ -&gt; General setup
+  -&gt; Timers subsystem
+   -&gt; Timer tick handling <span class="o">(</span>Full dynticks system <span class="o">(</span>tickless<span class="o">))</span>
+    <span class="o">(</span>X<span class="o">)</span> Full dynticks system <span class="o">(</span>tickless<span class="o">)</span>
+
+<span class="c1"># Set CONFIG_HZ_1000</span>
+ -&gt; Kernel Features
+  -&gt; Timer frequency <span class="o">(</span><span class="m">1000</span> HZ<span class="o">)</span>
+   <span class="o">(</span>X<span class="o">)</span> <span class="m">1000</span> HZ
+
+<span class="c1"># Set CPU_FREQ_DEFAULT_GOV_PERFORMANCE [=y]</span>
+ -&gt; CPU Power Management
+  -&gt; CPU Frequency scaling
+   -&gt; CPU Frequency scaling <span class="o">(</span>CPU_FREQ <span class="o">[=</span>y<span class="o">])</span>
+    -&gt; Default CPUFreq governor <span class="o">(</span>&lt;choice&gt; <span class="o">[=</span>y<span class="o">])</span>
+     <span class="o">(</span>X<span class="o">)</span> performance
+
+<span class="c1"># Disable CONFIG_AUFS_FS, otherwise RT kernel build breaks</span>
+ x     -&gt; File systems                                                                                                                          x
+  x <span class="o">(</span><span class="m">1</span><span class="o">)</span>   -&gt; Miscellaneous filesystems <span class="o">(</span>MISC_FILESYSTEMS <span class="o">[=</span>y<span class="o">])</span>
+</pre></div>
+</div>
+<p>Todo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_CPU_FREQ=n</span></code> or <code class="docutils literal notranslate"><span class="pre">CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND=y</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONFIG_CPU_IDLE=n</span></code>: Disable transitions to low-power states</p></li>
+</ul>
+<p>If you need to reconfigure it, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux-raspi-5.4.0/
+$ make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-linux-gnu- menuconfig
+</pre></div>
+</div>
+</section>
+<section id="kernel-build">
+<h2>Kernel build<a class="headerlink" href="#kernel-build" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> linux-raspi-5.4.0/
+$ make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-linux-gnu- -j <span class="sb">`</span>nproc<span class="sb">`</span> deb-pkg
+</pre></div>
+</div>
+<p>You need 32GB free disk space to build it, it takes a while, and the results are located here:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@3e9fd281ed2a:~/linux_build/linux-raspi-5.4.0$ ls -la ../*.deb
+-rw-r--r-- <span class="m">1</span> user user  <span class="m">11462528</span> Jun <span class="m">17</span> <span class="m">09</span>:46 ../linux-headers-5.4.114-rt57_5.4.114-rt57-1_arm64.deb
+-rw-r--r-- <span class="m">1</span> user user <span class="m">494790284</span> Jun <span class="m">17</span> <span class="m">09</span>:50 ../linux-image-5.4.114-rt57-dbg_5.4.114-rt57-1_arm64.deb
+-rw-r--r-- <span class="m">1</span> user user  <span class="m">39756144</span> Jun <span class="m">17</span> <span class="m">09</span>:46 ../linux-image-5.4.114-rt57_5.4.114-rt57-1_arm64.deb
+-rw-r--r-- <span class="m">1</span> user user   <span class="m">1055224</span> Jun <span class="m">17</span> <span class="m">09</span>:46 ../linux-libc-dev_5.4.114-rt57-1_arm64.deb
+</pre></div>
+</div>
+</section>
+<section id="deploy">
+<h2>Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline"></a></h2>
+<section id="download-and-install-ubuntu-20-04-image">
+<h3>Download and install Ubuntu 20.04 image<a class="headerlink" href="#download-and-install-ubuntu-20-04-image" title="Permalink to this headline"></a></h3>
+<p>Follow these links to download and install Ubuntu 20.04. In the case of the Raspberry PI:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ubuntu.com/download/raspberry-pi">https://ubuntu.com/download/raspberry-pi</a></p></li>
+<li><p><a class="reference external" href="https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04.2&amp;architecture=server-arm64+raspi">https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04.2&amp;architecture=server-arm64+raspi</a></p></li>
+<li><p><a class="reference external" href="https://ubuntu.com/tutorials/create-an-ubuntu-image-for-a-raspberry-pi-on-ubuntu#2-on-your-ubuntu-machine">https://ubuntu.com/tutorials/create-an-ubuntu-image-for-a-raspberry-pi-on-ubuntu#2-on-your-ubuntu-machine</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial username and password</span>
+ubuntu/ubuntu
+</pre></div>
+</div>
+</section>
+<section id="copy-a-new-kernel-to-your-system-and-install-it">
+<h3>Copy a new kernel to your system and install it<a class="headerlink" href="#copy-a-new-kernel-to-your-system-and-install-it" title="Permalink to this headline"></a></h3>
+<p>Todo: Add instructions explaining how to move the files to the Raspberry PI</p>
+<p>Assumed you have already copied all *.deb packages to your <code class="docutils literal notranslate"><span class="pre">$HOME/ubuntu</span></code> directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$HOME</span>/ubuntu
+$ sudo dpkg -i *.deb
+</pre></div>
+</div>
+<p>Now it is necessary to adjust vmlinuz and initrd.img links. First, we locate the kernel that we are using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:/boot$ uname -a
+Linux ubuntu <span class="m">5</span>.4.0-1028-raspi <span class="c1">#31-Ubuntu SMP PREEMPT Wed Jan 20 11:30:45 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux</span>
+</pre></div>
+</div>
+<p>We check the real-time kernel version that we installed, in this case is <code class="docutils literal notranslate"><span class="pre">5.4.114-rt57</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ ls /boot/
+System.map-5.4.0-1028-raspi  config-5.4.0-1028-raspi  dtb                   dtbs        initrd.img-5.4.0-1028-raspi  initrd.img.old            vmlinuz-5.4.0-1036-raspi
+System.map-5.4.0-1036-raspi  config-5.4.0-1036-raspi  dtb-5.4.0-1036-raspi  firmware    initrd.img-5.4.0-1036-raspi  vmlinuz                   vmlinuz-5.4.114-rt57
+System.map-5.4.114-rt57      config-5.4.114-rt57      dtb-5.4.114-rt57      initrd.img  initrd.img-5.4.114-rt57      vmlinuz-5.4.0-1028-raspi  vmlinuz.old
+</pre></div>
+</div>
+<p>Now we replace the old kernel with the new real-time one:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /boot
+$ sudo ln -s -f vmlinuz-5.4.114-rt57 vmlinuz
+$ sudo ln -s -f vmlinuz-5.4.0-1028-raspi vmlinuz.old
+$ sudo ln -s -f initrd.img-5.4.114-rt57 initrd.img
+$ sudo ln -s -f initrd.img-5.4.0-1028-raspi initrd.img.old
+$ sudo cp vmlinuz firmware/vmlinuz
+$ sudo cp vmlinuz firmware/vmlinuz.bak
+$ sudo cp initrd.img firmware/initrd.img
+$ sudo cp initrd.img firmware/initrd.img.bak
+
+$ sudo reboot
+</pre></div>
+</div>
+</section>
+<section id="configure-boot-options">
+<h3>Configure boot options<a class="headerlink" href="#configure-boot-options" title="Permalink to this headline"></a></h3>
+<p>Inside the Raspberry PI, add the following at the end of the line in <code class="docutils literal notranslate"><span class="pre">/boot/firmware/cmdline.txt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo vim /boot/firmware/cmdline.txt
+<span class="c1">#  dwc_otg.fiq_fsm_enable=0 dwc_otg.fiq_enable=0 dwc_otg.nak_holdoff=0 dwg_otg.speed=1 rcu_nocbs=0 nohz_full=1-3 isolcpus=1-3 audit=0 watchdog=0 skew_tick=1</span>
+</pre></div>
+</div>
+<p>Here is an explanation of what each option will do:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dwc_otg.fiq_fsm_enable=0</span> <span class="pre">dwc_otg.fiq_enable=0</span> <span class="pre">dwc_otg.nak_holdoff=0</span></code>: solves an issue causing a high CPU usage from the USB driver (see <a class="reference external" href="https://www.osadl.org/Single-View.111+M5c03315dc57.0.html">https://www.osadl.org/Single-View.111+M5c03315dc57.0.html</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rcu_nocbs=0</span></code>: relocates RCU callbacks to kernel threads</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nohz_full=1-3</span></code>: makes CPU1, CPU2 and CPU3 tickless</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isolcpus=1-3</span></code>: isolates CPU1, CPU2 and CPU3. No process will be automatically scheduled to these CPUs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">audit=0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">watchdog=0</span></code>: disables the watchdog timer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skew_tick=1</span></code></p></li>
+</ul>
+<p>TODO: explain all the boot options used</p>
+<p>For more information see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://linux.enea.com/4.0/documentation/book-enea-linux-realtime-guide.pdf">https://linux.enea.com/4.0/documentation/book-enea-linux-realtime-guide.pdf</a></p></li>
+</ul>
+</section>
+<section id="verify-that-eveything-is-correctly-configured">
+<h3>Verify that eveything is correctly configured<a class="headerlink" href="#verify-that-eveything-is-correctly-configured" title="Permalink to this headline"></a></h3>
+<p>After reboot you should see a new RT kernel installed</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:/boot$ uname -a
+Linux ubuntu <span class="m">5</span>.4.114-rt57 <span class="c1">#1 SMP PREEMPT_RT Thu Jun 17 09:21:41 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux</span>
+</pre></div>
+</div>
+<p>Check that fiq is actually disabled:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ dmesg <span class="p">|</span> grep -i fiq
+<span class="o">[</span>    <span class="m">0</span>.000000<span class="o">]</span> Kernel <span class="nb">command</span> line:  <span class="nv">coherent_pool</span><span class="o">=</span>1M <span class="m">8250</span>.nr_uarts<span class="o">=</span><span class="m">1</span> snd_bcm2835.enable_compat_alsa<span class="o">=</span><span class="m">0</span> snd_bcm2835.enable_hdmi<span class="o">=</span><span class="m">1</span> bcm2708_fb.fbwidth<span class="o">=</span><span class="m">0</span> bcm2708_fb.fbheight<span class="o">=</span><span class="m">0</span> bcm2708_fb.fbswap<span class="o">=</span><span class="m">1</span> smsc95xx.macaddr<span class="o">=</span>DC:A6:32:A7:32:00 vc_mem.mem_base<span class="o">=</span>0x3ec00000 vc_mem.mem_size<span class="o">=</span>0x40000000  net.ifnames<span class="o">=</span><span class="m">0</span> dwc_otg.lpm_enable<span class="o">=</span><span class="m">0</span> <span class="nv">console</span><span class="o">=</span>ttyS0,115200 <span class="nv">console</span><span class="o">=</span>tty1 <span class="nv">root</span><span class="o">=</span><span class="nv">LABEL</span><span class="o">=</span>writable <span class="nv">rootfstype</span><span class="o">=</span>ext4 <span class="nv">elevator</span><span class="o">=</span>deadline rootwait fixrtc dwc_otg.fiq_fsm_enable<span class="o">=</span><span class="m">0</span> dwc_otg.fiq_enable<span class="o">=</span><span class="m">0</span> dwc_otg.nak_holdoff<span class="o">=</span><span class="m">0</span> dwg_otg.speed<span class="o">=</span><span class="m">1</span> <span class="nv">rcu_nocbs</span><span class="o">=</span><span class="m">0</span> <span class="nv">nohz_full</span><span class="o">=</span><span class="m">1</span>-3 <span class="nv">isolcpus</span><span class="o">=</span><span class="m">1</span>-3 quiet splash
+<span class="o">[</span>    <span class="m">1</span>.771203<span class="o">]</span> dwc_otg: FIQ disabled
+<span class="o">[</span>    <span class="m">1</span>.771212<span class="o">]</span> dwc_otg: FIQ split-transaction FSM disabled
+</pre></div>
+</div>
+<p>Check that interrupts, except timers, are only handled by CPU0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ cat /proc/interrupts
+           CPU0       CPU1       CPU2       CPU3       
+  <span class="m">1</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">25</span> Level     vgic
+  <span class="m">3</span>:     <span class="m">306043</span>        <span class="m">106</span>        <span class="m">104</span>        <span class="m">103</span>     GICv2  <span class="m">30</span> Level     arch_timer
+  <span class="m">4</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">27</span> Level     kvm guest vtimer
+ <span class="m">11</span>:      <span class="m">41860</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">65</span> Level     fe00b880.mailbox
+ <span class="m">15</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">150</span> Level     fe204000.spi
+ <span class="m">16</span>:       <span class="m">1143</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">125</span> Level     ttyS0
+ <span class="m">17</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">149</span> Level     fe804000.i2c
+ <span class="m">20</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">114</span> Level     DMA IRQ
+ <span class="m">22</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">116</span> Level     DMA IRQ
+ <span class="m">23</span>:        <span class="m">342</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">117</span> Level     DMA IRQ
+ <span class="m">27</span>:         <span class="m">47</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">66</span> Level     VCHIQ doorbell
+ <span class="m">28</span>:      <span class="m">20553</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">158</span> Level     mmc1, mmc0
+ <span class="m">29</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">48</span> Level     arm-pmu
+ <span class="m">30</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">49</span> Level     arm-pmu
+ <span class="m">31</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">50</span> Level     arm-pmu
+ <span class="m">32</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2  <span class="m">51</span> Level     arm-pmu
+ <span class="m">34</span>:        <span class="m">840</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">189</span> Level     eth0
+ <span class="m">35</span>:        <span class="m">475</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">190</span> Level     eth0
+ <span class="m">41</span>:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>     GICv2 <span class="m">175</span> Level     PCIe PME, aerdrv
+ <span class="m">42</span>:         <span class="m">45</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>  BRCM STB PCIe MSI <span class="m">524288</span> Edge      xhci_hcd
+IPI0:        <span class="m">31</span>         <span class="m">14</span>         <span class="m">14</span>         <span class="m">14</span>       Rescheduling interrupts
+IPI1:         <span class="m">0</span>        <span class="m">277</span>        <span class="m">277</span>        <span class="m">278</span>       Function call interrupts
+IPI2:         <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>       CPU stop interrupts
+IPI3:         <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>       CPU stop <span class="o">(</span><span class="k">for</span> crash dump<span class="o">)</span> interrupts
+IPI4:         <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>       Timer broadcast interrupts
+IPI5:     <span class="m">21717</span>          <span class="m">8</span>          <span class="m">8</span>          <span class="m">6</span>       IRQ work interrupts
+IPI6:         <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>       CPU wake-up interrupts
+Err:          <span class="m">0</span>
+</pre></div>
+</div>
+<p>Check that soft-interrupts, except timers, are only handled by CPU0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ubuntu@ubuntu:~$ cat /proc/softirqs
+                    CPU0       CPU1       CPU2       CPU3       
+          HI:          <span class="m">2</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+       TIMER:     <span class="m">343845</span>        <span class="m">105</span>        <span class="m">103</span>        <span class="m">103</span>
+      NET_TX:        <span class="m">165</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+      NET_RX:       <span class="m">1628</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+       BLOCK:       <span class="m">9192</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+    IRQ_POLL:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+     TASKLET:       <span class="m">3728</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+       SCHED:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+     HRTIMER:      <span class="m">60501</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+         RCU:          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+</pre></div>
+</div>
+<p>Check that all the CPU cores are operating at 1000MHz:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># reset cpufreq stat counters</span>
+ubuntu@ubuntu:~$ <span class="nb">echo</span> <span class="s1">&#39;1&#39;</span> <span class="p">|</span> sudo tee /sys/devices/system/cpu/cpu*/cpufreq/stats/reset
+<span class="m">1</span>
+ubuntu@ubuntu:~$ cpufreq-info -s -m
+<span class="m">600</span> MHz:0.00%, <span class="m">700</span> MHz:0.00%, <span class="m">800</span> MHz:0.00%, <span class="m">900</span> MHz:0.00%, <span class="m">1000</span> MHz:100.00%, <span class="m">1</span>.10 GHz:0.00%, <span class="m">1</span>.20 GHz:0.00%, <span class="m">1</span>.30 GHz:0.00%, <span class="m">1</span>.40 GHz:0.00%, <span class="m">1</span>.50 GHz:0.00%
+</pre></div>
+</div>
+</section>
+<section id="benchmark">
+<h3>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline"></a></h3>
+<p>Finally, we can benchmark the real-time performance of the configured kernel with the platform we are using. A common benchmark is to measure the interrupt latency using a tool named <a class="reference external" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/tools/cyclictest/start">cyclictest</a>.</p>
+<p>For example you run a latency test imposing CPU and I/O stress in the system and verifying that the latency test results in good performance.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ taskset -c <span class="m">0</span> stress -c <span class="m">1</span> <span class="p">&amp;</span> 
+$ taskset -c <span class="m">1</span> stress -c <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">2</span> stress -c <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">3</span> stress -c <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">0</span> stress -i <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">1</span> stress -i <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">2</span> stress -i <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">3</span> stress -i <span class="m">1</span> <span class="p">&amp;</span>
+$ taskset -c <span class="m">0</span> cyclictest -p <span class="m">90</span> -m -t1 -n -D 3h -i <span class="m">200</span> -a <span class="m">1</span> -h500 -q 
+</pre></div>
+</div>
+<p>In order to generate a latency plot you can use the <a class="reference external" href="https://www.osadl.org/Create-a-latency-plot-from-cyclictest-hi.bash-script-for-latency-plot.0.html">OSADL script</a>.</p>
+<p><img alt="../../../_images/rpi4_latency_plot.png" src="../../../_images/rpi4_latency_plot.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_build_your_own_linux-real_time_kernel.html" class="btn btn-neutral float-left" title="How to build your own Linux real-time kernel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="real_time_raspberry_pi_images.html" class="btn btn-neutral float-right" title="Real-time Raspberry PI images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, ROS 2 Real-Time Working Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

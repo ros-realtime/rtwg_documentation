@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test environment &mdash; ROS 2 Real-Time Working Group  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Subproject List" href="../Subprojects/subprojects.html" />
+    <link rel="prev" title="How to use ros2_tracing to trace and analyze an application" href="../Guides/ros2_tracing_trace_and_analyze.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ROS 2 Real-Time Working Group
+            <img src="../_static/rtwg_image.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Guides/guides.html">Guides</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Subprojects/subprojects.html">Subproject List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Related-Projects/related_projects.html">Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Contact/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributing/how_to_contribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Roadmap/Roadmap.html">Roadmap</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ROS 2 Real-Time Working Group</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Test environment</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Real-Time-Buildfarm/real_time_buildfarm.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="test-environment">
+<h1>Test environment<a class="headerlink" href="#test-environment" title="Permalink to this headline"></a></h1>
+<p>This document describes a test environment used for the ROS2 real-time tests</p>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline"></a></h2>
+<p>Two hardware platforms:</p>
+<ul class="simple">
+<li><p>Hardware architecture</p>
+<ul>
+<li><p>Intel x86_64</p></li>
+<li><p>ARM v8</p></li>
+</ul>
+</li>
+<li><p>Number of CPU cores =&gt; 4</p></li>
+<li><p>Amount of RAM =&gt; 8 GB</p></li>
+<li><p>Supports Ubuntu 20.04 LTS release</p></li>
+</ul>
+<section id="arm">
+<h3>ARM<a class="headerlink" href="#arm" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.raspberrypi.org/blog/8gb-raspberry-pi-4-on-sale-now-at-75">Raspberry Pi 4 8 GB RAM, 4 CPU cores</a> or similar</p></li>
+</ul>
+</section>
+<section id="intel">
+<h3>Intel<a class="headerlink" href="#intel" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>any Intel PC with 8 GB RAM, 4 CPU cores</p></li>
+<li><p><a class="reference external" href="https://up-shop.org/up-squared-board-pentium-quad-core-8gb-memory-64gb-emmc.html">UP squared 8 GB RAM, 4 CPU cores</a></p></li>
+</ul>
+</section>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline"></a></h2>
+<p>We use ROS2 Foxy release and Ubuntu 20.04 which is a Tier 1 platform as described in the <a class="reference external" href="https://docs.ros.org/en/foxy/Releases/Release-Foxy-Fitzroy.html#supported-platforms">Release information</a>.</p>
+<section id="ros2-foxy-release">
+<h3>ROS2 foxy release<a class="headerlink" href="#ros2-foxy-release" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Prebuilt Debian packages from <a class="reference external" href="https://docs.ros.org/en/foxy/Installation/Linux-Install-Debians.html">Installing ROS 2 via Debian Packages</a></p></li>
+</ul>
+</section>
+<section id="latest-ubuntu-20-04-lts-iso-image">
+<h3>Latest Ubuntu 20.04 LTS (ISO image)<a class="headerlink" href="#latest-ubuntu-20-04-lts-iso-image" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ubuntu.com/download/raspberry-pi">Raspberry Pi4</a></p></li>
+<li><p><a class="reference external" href="https://wiki.up-community.org/Ubuntu">Intel UP squared</a></p></li>
+<li><p><a class="reference external" href="https://ubuntu.com/download/desktop">Intel Ubuntu 20.04.2.0 LTS</a></p></li>
+</ul>
+</section>
+<section id="latest-stable-preempt-rt-kernel">
+<h3>Latest Stable PREEMPT_RT Kernel<a class="headerlink" href="#latest-stable-preempt-rt-kernel" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>PREEMPT_RT Kernel is built using <a class="reference external" href="https://github.com/ros-realtime/linux-real-time-kernel-builder">these instructions</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Guides/ros2_tracing_trace_and_analyze.html" class="btn btn-neutral float-left" title="How to use ros2_tracing to trace and analyze an application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Subprojects/subprojects.html" class="btn btn-neutral float-right" title="Subproject List" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, ROS 2 Real-Time Working Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
