@@ -7,11 +7,18 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+    - name: Install deps
+      run: |
+        sudo locale-gen en_US.UTF-8
+        sudo update-locale
+    - name: Install dependencies
+      run: |
+        sudo apt update && sudo apt install python3 python3-pip && \
+        sudo pip3 install recommonmark
     - name: Checkout
       uses: actions/checkout@master
       with:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-      run: sudo pip3 install recommonmark
     - name: Build and Commit
       uses: sphinx-notes/pages@master
       with:
