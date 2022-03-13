@@ -3,17 +3,23 @@
 This page describes planned work for the ROS 2 Real-Time Working Group.
 
 
-| **Task**                                                     | Issue                                                        | **Owner**                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Documentation: Complete Linux real-time guide                |                                                              | [carlossvg](https://github.com/carlossvg) <br/>[razr](https://github.com/razr) |
-| Tools: Release ROS 2 Raspberry PI real-time image            | [project board](https://github.com/orgs/ros-realtime/projects/3/views/4?layout=board) |                                                              |
-| Documentation: Add introduction and goals                    | [#16](https://github.com/ros-realtime/rtwg_documentation/issues/16) [#12](https://github.com/ros-realtime/community/issues/12) |                                                              |
-| Documentation: How to configure and run a <br/> ROS 2 Real-Time application | [#32](https://github.com/ros-realtime/community/issues/32)   | [JanStaschulat](https://github.com/JanStaschulat)            |
-| Buildfarm: Implement infrastructure to report  <br/> the ROS 2 real-time test's results | [#7](https://github.com/ros-realtime/community/issues/7)     | [landerU](https://github.com/landerU) [carlossvg](https://github.com/carlossvg) |
-| Features: Add support package to configure <br/> real-time  and platform specific settings | [#14](https://github.com/ros-realtime/community/issues/14)   |                                                              |
-| Documentation: Add tutorial to run the <br/> pendulum_control demo | [#21](https://github.com/ros-realtime/community/issues/21)   | [carlossvg](https://github.com/carlossvg)                    |
-| Documentation: Add tutorial to run <br/> `performance_test` with real-time settings | [#20](https://github.com/ros-realtime/community/issues/20)   | [carlossvg](https://github.com/carlossvg)                    |
-| Documentation: Add tutorial to run a <br/> Autoware.Auto demo in QNX | [#22](https://github.com/ros-realtime/community/issues/22)   | [asobhy-qnx](https://github.com/asobhy-qnx)                  |
-| Documentation: Add a guide explaining how <br/>to configure ROS 2 with Fast-DDS for <br/>real-time applications | [#27](https://github.com/ros-realtime/community/issues/27)   |                                                              |
-| Documentation: Add a guide explaining how <br/>to configure ROS 2 with Cyclone-DDS for <br/>real-time applications | [#26](https://github.com/ros-realtime/community/issues/26)   |                                                              |
-| Documentation: Add a guide explaining how <br/>to configure ROS 2 with Connext-DDS for <br/>real-time applications | [#28](https://github.com/ros-realtime/community/issues/28)   |                                                              |
+| **Task**                                                     | **Category**  | **Issue**                                                                 |
+| ------------------------------------------------------------ | ------------- | ------------------------------------------------------------------------- |
+| Release ROS 2 Raspberry PI real-time image and build tools   | Tools         | [#20](https://github.com/ros-realtime/ros-realtime-rpi4-image/issues/20)  |
+| Write tutorial how to develop a real-time application        | Documentation | [#32](https://github.com/ros-realtime/community/issues/32)                |
+| Complete Linux RT guide for the Raspberry PI image release   | Documentation | [#34](https://github.com/ros-realtime/community/issues/34)                |
+| Add RTWG goals                                               | Documentation | [#12](https://github.com/ros-realtime/community/issues/12)                |
+| Add ROS 2 and real-time introductory document                | Documentation | [#16](https://github.com/ros-realtime/community/issues/16)                |
+| Carry out performance test measurements for ROS 2 stack      | Performance   | [#7](https://github.com/ros-realtime/community/issues/7)                  |
+| Refactor realtime_support package                            | Tools         | [#14](https://github.com/ros-realtime/community/issues/14)                |                                                              
+| Create pendulum_control demo tutorial                        | Documentation | [#21](https://github.com/ros-realtime/community/issues/21)                |
+| Create `performance_test` tutorial                           | Documentation | [#20](https://github.com/ros-realtime/community/issues/20)                |
+| Create Autoware.Auto demo in QNX tutorial                    | Documentation | [#22](https://github.com/ros-realtime/community/issues/22)                |
+| Create middleware RT tutorials                              | Documentation | [#33](https://github.com/ros-realtime/community/issues/33)                |                                                             
+| Create concepts section                                      | Documentation | [#17](https://github.com/ros-realtime/community/issues/17)                |                                                             
+
+
+
+
+
+
