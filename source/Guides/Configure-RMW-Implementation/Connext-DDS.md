@@ -1,3 +1,0 @@
-# Connext-DDS
-
-TODO

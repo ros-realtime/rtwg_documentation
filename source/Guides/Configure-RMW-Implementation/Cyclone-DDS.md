@@ -1,3 +1,0 @@
-# Cyclone-DDS
-
-TODO
