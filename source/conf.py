@@ -25,6 +25,12 @@ release = ''
 
 # -- General configuration ---------------------------------------------------
 
+redirects = {
+    "*": "https://ros-realtime.github.io/"
+}
+
+html_baseurl="https://ros-realtime.github.io/"
+
 # Add any Sphinx extension module names here, as strings.
 extensions = [
     'sphinx.ext.autodoc',
@@ -40,6 +46,7 @@ extensions = [
     "recommonmark",
     "sphinx_markdown_tables",
     "sphinx_multiversion",
+    'sphinx_reredirects'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
