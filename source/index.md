@@ -1,6 +1,19 @@
-<meta http-equiv="refresh" content="5; URL=https://ros-realtime.github.io/" />
+# Welcome to Real-Time working group's documentation!
 
+The Real-Time Working Group's mission is to advocate for and work on memory management, real-time pub/sub, real-time DDS, and tools that allow tracing, profiling and optimizing.
 
-<body>
-  <p>This website has been deprecated. If you are not redirected in five seconds, <a href="https://ros-realtime.github.io/">click here</a>.</p>
-</body>
+```eval_rst
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+   Guides/guides.md
+   Real-Time-Buildfarm/real_time_buildfarm
+   Subprojects/subprojects
+   Related-Projects/related_projects
+   Resources/resources
+   Contact/contact
+   Contributing/how_to_contribute
+   Roadmap/Roadmap
+```

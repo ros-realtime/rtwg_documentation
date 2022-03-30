@@ -66,5 +66,3 @@ lange
 qnx
 ralph
 razr
-href
-http
